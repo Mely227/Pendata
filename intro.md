@@ -1,33 +1,24 @@
-# Selamat Datang Di Penambangan Data
+<div style="font-size:16px">
 
----
+<h2>Selamat Datang di Penambangan Data</h2>
 
-## 📊 Pengantar
 Tempat di mana data diolah menjadi informasi, dan informasi menjadi keputusan.  
-Di sini kita belajar memahami:
+Di sini kita belajar memahami pola, klasifikasi, clustering, hingga prediksi berbasis data.
 
-- Pola data
-- Klasifikasi
-- Clustering
-- Prediksi berbasis data
+<br>
 
----
+<div style="background:#f5f7fa;padding:15px;border-radius:8px;">
+<b>Profil Mahasiswa</b><br><br>
 
-## 👤 Profil Mahasiswa
-
-<div style="background:#f2f4f7;padding:15px;border-radius:10px">
-
-**Nama** : Mely Susantika Dewi  
-**NIM** : 240411100227  
+Nama : Mely Susantika Dewi<br>
+NIM : 240411100227<br><br>
 
 Siap menambang data dan menemukan insight berharga!
-
 </div>
 
----
+<br>
 
-## 📚 Daftar Materi
-Silakan pilih materi pada menu di sebelah kiri atau lanjut ke halaman berikutnya.
+<b>Materi Pembelajaran</b>
 
 ```{tableofcontents}
 ```
