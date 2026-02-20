@@ -2,8 +2,7 @@
 title: Data Mining
 
 ---
-
-##### Pengertian Data Mining
+###### Pengantar Data Mining 
 
 Data mining adalah bidang ilmu yang mempelajari cara menemukan pengetahuan atau informasi berharga dari kumpulan data yang besar.
 
