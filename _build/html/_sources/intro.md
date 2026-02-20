@@ -32,5 +32,6 @@ Siap menambang data dan menemukan insight berharga!
 Silakan pilih materi melalui menu di sebelah kiri atau lanjut ke halaman berikutnya.
 </p>
 
+</div>
+
 ```{tableofcontents}
-</div> ```
