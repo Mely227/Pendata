@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Penambangan Data</title>
+    <title>Memahami Data &#8212; Penambangan Data</title>
   
   
   
@@ -62,10 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Memahami Data';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pengantar Data Mining" href="Data%20Mining.html" />
+    <link rel="prev" title="Pengantar Data Mining" href="Data%20Mining.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,8 +130,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,16 +168,16 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     <no title>
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Data%20Mining.html">Pengantar Data Mining</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Memahami%20Data.html">Memahami Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Memahami Data</a></li>
 </ul>
 
     </div>
@@ -249,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMemahami Data.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -279,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Memahami Data.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,9 +350,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -363,7 +361,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Memahami Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,38 +375,209 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div style="font-size:15px; line-height:1.6;">
-<h2 style="margin-bottom:5px;">📊 Selamat Datang di Penambangan Data</h2>
-<p style="color:#555;">
-Tempat di mana data diolah menjadi informasi, dan informasi menjadi keputusan.
-Di sini kita belajar memahami pola, klasifikasi, clustering, hingga prediksi berbasis data.
-</p>
-<br>
-<div style="background:#f7f9fc;
-            padding:18px;
-            border-radius:10px;
-            border-left:5px solid #4c72ff;
-            box-shadow:0 2px 6px rgba(0,0,0,0.05);">
-<p><b style="font-size:16px;">👤 Profil Mahasiswa</b><br><br></p>
-<p><b>Nama</b> : Mely Susantika Dewi<br>
-<b>NIM</b> : 240411100227<br><br></p>
-<span style="color:#555;">
-Siap menambang data dan menemukan insight berharga!
-</span>
-</div>
-<br>
-<h3 style="margin-bottom:5px;">📚 Materi Pembelajaran</h3>
-<p style="color:#555;">
-Silakan pilih materi melalui menu di sebelah kiri atau lanjut ke halaman berikutnya.
-</p>
-</div>
-<div class="toctree-wrapper compound">
+  <section id="memahami-data">
+<h1>Memahami Data<a class="headerlink" href="#memahami-data" title="Permalink to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Pengertian Data
+Data adalah sekumpulan fakta atau informasi mentah yang dapat diolah menjadi informasi yang lebih bermakna. Dalam penambangan data (data mining), memahami jenis dan karakteristik data sangat penting sebelum melakukan analisis.</p>
+<p>Data bisa berasal dari berbagai sumber seperti manusia, mesin, sensor, media sosial, transaksi online, dan lain-lain.</p>
+</li>
+<li><p>Jenis-Jenis Data</p></li>
+</ol>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Data%20Mining.html">Pengantar Data Mining</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data%20Mining.html#keunggulan-data-mining">Keunggulan Data Mining</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Memahami%20Data.html">Memahami Data</a></li>
+<li><p>Data Terstuktur
+Data terstruktur adalah data yang tersusun rapi dalam bentuk tabel (baris dan kolom), seperti di Excel atau database.Contohnya Data nilai mahasiswa,Data pelanggan,Data transaksi penjualan. Pada data terstruktur, setiap kolom disebut <strong>atribut atau variabel</strong>.
+<strong>Jenis Atribut pada Data Terstruktur:</strong>
+<strong>a. Nominal</strong>
+Data berupa kategori tanpa urutan.
+Contoh: jenis kelamin, warna, jurusan.</p>
+<p><strong>b. Biner</strong>
+Data yang hanya memiliki dua nilai.
+Contoh: Ya/Tidak, 0/1, Lulus/Tidak.</p>
+<p><strong>c. Ordinal</strong>
+Data yang memiliki urutan, tetapi jarak antar nilainya tidak bisa dihitung.
+Contoh: kecil – sedang – besar.</p>
+<p><strong>d. Numerik</strong>
+Data berupa angka yang bisa dihitung.
+Contoh: umur, tinggi badan, nilai ujian.</p>
+</li>
+<li><p>Data Tidak Terstruktur
+Data tidak terstruktur adalah data yang tidak memiliki format tetap dan tidak tersusun dalam tabel.Contohnya Email,Artikel,Chat,Dokumen teks.
+Data jenis ini biasanya perlu diproses terlebih dahulu sebelum dianalisis.</p></li>
+<li><p>Data Bahasa Alami
+Data dalam bentuk bahasa manusia, seperti teks Bahasa Indonesia atau Bahasa Inggris.Contohnya Komentar media sosial,Review produk,Berita.
+Untuk mengolah data ini biasanya digunakan teknik Pemrosesan Bahasa Alami (NLP).</p></li>
+<li><p>Data yang Dibuat oleh Mesin
+Data yang dihasilkan otomatis dari alat atau mesin, misalnya log server atau sensor Internet of Things.</p></li>
+<li><p>Data Berbasis Graph
+Data yang menggambarkan hubungan antar objek seperti jaringan pertemanan di media sosial.</p></li>
+<li><p>Data Multimedia
+Data seperti audio, video, atau gambar yang biasanya berasal dari media digital dan memerlukan teknik khusus untuk diproses.</p></li>
+<li><p>Data Streaming
+Data yang terus datang secara berurutan misalnya setiap detik data sensor atau transaksi online dan sering diproses secara berkelanjutan.</p></li>
 </ul>
-</div>
+<ol class="arabic" start="3">
+<li><p>Distribusi Data
+Distribusi data menunjukkan bagaimana data tersebar.
+Salah satu distribusi yang sering ditemui adalah distribusi normal (berbentuk kurva lonceng), di mana sebagian besar nilai berada di sekitar rata-rata.
+<strong>Rumus Distribusi Normal:</strong>
+$<span class="math notranslate nohighlight">\(
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} 
+e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\)</span>$
+Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> = mean (rata-rata)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> = standar deviasi (sigma)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma^2\)</span> = variansi (sigma kuadrat)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi\)</span> = konstanta 3.14159</p></li>
+<li><p><span class="math notranslate nohighlight">\(e\)</span> = bilangan Euler (≈ 2.718)</p></li>
+</ul>
+<p>Distribusi membantu kita memahami:</p>
+<ul class="simple">
+<li><p>Apakah data seimbang</p></li>
+<li><p>Apakah data miring ke kiri atau kanan</p></li>
+<li><p>Apakah terdapat nilai yang tidak wajar</p></li>
+</ul>
+</li>
+<li><p>Statistik Deskriptif
+Statistik deskriptif digunakan untuk merangkum dan menjelaskan data numerik.</p>
+<ul>
+<li><p>Ukuran Pusat
+<strong>Mean (Rata-rata)</strong>
+Jumlah seluruh nilai dibagi banyaknya data.
+Rumusnya:
+$<span class="math notranslate nohighlight">\(
+\text{Mean} = \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\)</span><span class="math notranslate nohighlight">\(
+**Median**
+Nilai tengah setelah data diurutkan.
+Rumus:
+Jika jumlah data ganjil:
+\)</span><span class="math notranslate nohighlight">\(
+\text{Median} = x_{\frac{n+1}{2}}
+\)</span><span class="math notranslate nohighlight">\(
+Jika jumlah data genap:
+\)</span><span class="math notranslate nohighlight">\(
+\text{Median} = \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2}
+\)</span><span class="math notranslate nohighlight">\(
+Median Data Berkelompok (interval)
+\)</span><span class="math notranslate nohighlight">\(
+Me = x_{ij} + \left( \frac{\frac{n}{2} - f_{kij}}{f_i} \right) p
+\)</span>$
+Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Me\)</span> = Median</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{ij}\)</span> = Batas bawah kelas median</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Jumlah seluruh data</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{kij}\)</span> = Frekuensi kumulatif data di bawah kelas median</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_i\)</span> = Frekuensi data pada kelas median</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> = Panjang interval kelas</p></li>
+</ul>
+<p><strong>Modus</strong>
+Nilai yang paling sering muncul.
+Rumusnya:
+$<span class="math notranslate nohighlight">\(
+\text{Modus} = \text{nilai } x \text{ dengan frekuensi terbesar}
+\)</span>$</p>
+</li>
+<li><p>Ukuran Sebaran
+Ukuran penyebaran digunakan untuk mengetahui seberapa jauh data menyebar dari nilai pusat (mean atau median).</p>
+<ol class="arabic">
+<li><p>Rentang (Range)
+$<span class="math notranslate nohighlight">\(
+\text{Range} = X_{\text{maks}} - X_{\text{min}}
+\)</span>$</p>
+<p>Range adalah selisih antara nilai terbesar dan nilai terkecil dalam data.
+Semakin besar range, semakin lebar penyebaran data.</p>
+</li>
+<li><p>Kuartil
+Kuartil membantu melihat posisi dan penyebaran data secara lebih rinci.
+Kuartil membagi data yang telah diurutkan menjadi empat bagian:
+<span class="math notranslate nohighlight">\(Q_1 = \text{Kuartil bawah}\)</span>
+<span class="math notranslate nohighlight">\(Q_2 = \text{Median}\)</span><br />
+<span class="math notranslate nohighlight">\(Q_3 = \text{Kuartil atas}\)</span></p></li>
+<li><p>Interquartile Range (IQR)
+$<span class="math notranslate nohighlight">\(
+IQR = Q_3 - Q_1
+\)</span>$
+IQR menunjukkan penyebaran 50% data tengah dan tidak terlalu dipengaruhi oleh nilai ekstrem.</p></li>
+<li><p>Variansi
+Variansi dan standar deviasi adalah ukuran penyebaran data. Nilai-nilai tersebut menunjukkan bagaimana penyebaran distribusi data. Standar Deviasi yang rendah berarti bahwa pengamatan data cenderung sangat dekat dengan rata-rata, sedangkan deviasi standar yang tinggi menunjukkan data tersebar di sejumlah nilai-nilai besarVariansi mengukur rata-rata kuadrat penyimpangan data terhadap mean.</p></li>
+<li><p>Standar Deviasi
+Populasi:
+$<span class="math notranslate nohighlight">\(
+\sigma = \sqrt{\sigma^2}
+\)</span><span class="math notranslate nohighlight">\(
+Sampel:
+\)</span><span class="math notranslate nohighlight">\(
+s = \sqrt{s^2}
+\)</span>$
+Standar deviasi menunjukkan seberapa jauh data menyimpang dari rata-rata dalam satuan asli data.
+Semakin besar nilainya, semakin menyebar datanya.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Skewness (Kemencengan)
+Skewness adalah ukuran yang menunjukkan arah dan tingkat kemiringan distribusi data terhadap rata-rata.</p>
+<ul class="simple">
+<li><p>Skewness Positif (Miring ke Kanan)
+Ciri:</p>
+<ul>
+<li><p>Ekor distribusi lebih panjang di sebelah kanan</p></li>
+<li><p>Mean lebih besar dari median
+$<span class="math notranslate nohighlight">\(
+\text{Mean} &gt; \text{Median} &gt; \text{Modus}
+\)</span>$
+Distribusi condong ke kanan karena terdapat beberapa nilai yang sangat besar.</p></li>
+</ul>
+</li>
+<li><p>Skewness Negatif (Miring ke Kiri)
+Ciri:</p>
+<ul>
+<li><p>Ekor distribusi lebih panjang di sebelah kiri</p></li>
+<li><p>Mean lebih kecil dari median
+$<span class="math notranslate nohighlight">\(
+\text{Mean} &lt; \text{Median} &lt; \text{Modus}
+\)</span>$
+Distribusi condong ke kiri karena terdapat beberapa nilai yang sangat kecil.</p></li>
+</ul>
+</li>
+<li><p>Distribusi Simetris
+Ciri:</p>
+<ul>
+<li><p>Bentuk kiri dan kanan sama</p></li>
+<li><p>Tidak memiliki kemiringan</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Mean} = \text{Median} = \text{Modus}
+\]</div>
+<p><strong>Rumus Skewness (Populasi)</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\gamma_1 = \frac{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^3}{\sigma^3}
+\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma_1\)</span> = Koefisien skewness</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> = Mean populasi</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> = Standar deviasi</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> = Jumlah data</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span> = Nilai data ke-i</p></li>
+</ul>
+<p>Jika:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma_1 &gt; 0\)</span> → Skewness positif</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_1 &lt; 0\)</span> → Skewness negatif</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_1 = 0\)</span> → Distribusi simetris</p></li>
+</ul>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -440,14 +609,14 @@ Silakan pilih materi melalui menu di sebelah kiri atau lanjut ke halaman berikut
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
+    <a class="left-prev"
        href="Data%20Mining.html"
-       title="next page">
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Pengantar Data Mining</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
