@@ -12,4 +12,18 @@ Di sini kita belajar memahami pola, klasifikasi, *clustering*, hingga prediksi b
 
 Siap menambang data dan menemukan insight berharga!
 
+---
+
+## 📚 Materi Pembelajaran
+
+Berikut materi yang akan dipelajari:
+
+1. Pengantar Data Mining  
+2. Memahami Data  
+3. Data Understanding
+
+Silakan pilih materi melalui menu di sebelah kiri atau lanjut ke halaman berikutnya.
+
+---
+
 ```{tableofcontents}
