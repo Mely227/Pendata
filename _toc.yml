@@ -6,3 +6,5 @@ root: intro
 chapters:
 - file: Data Mining.md
 - file: Memahami Data.md
+- file: Tugas_1.ipynb
+
