@@ -18,9 +18,6 @@ Siap menambang data dan menemukan insight berharga!
 
 Berikut materi yang akan dipelajari:
 
-1. Pengantar Data Mining  
-2. Memahami Data  
-3. Data Understanding
 
 Silakan pilih materi melalui menu di sebelah kiri atau lanjut ke halaman berikutnya.
 

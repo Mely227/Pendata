@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: Pengantar Data Mining
-- file: Memahami Data
-- file: Data Understanding
+- file: Materi_Pendat.ipynb
+- file: Tugas_1.ipynb
+
 
