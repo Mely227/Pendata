@@ -4,7 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: Data Mining.md
-- file: Memahami Data.md
+- file: Materi_Pendat.ipynb
 - file: Tugas_1.ipynb
 
