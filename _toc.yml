@@ -6,5 +6,6 @@ root: intro
 chapters:
 - file: Materi_Pendat.ipynb
 - file: Tugas_1.ipynb
+- file: Mengukur_Jarak.ipynb
 
 
