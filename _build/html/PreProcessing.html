@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Selamat Datang di Penambangan Data &#8212; Penambangan Data</title>
+    <title>PreProcessing &#8212; Penambangan Data</title>
   
   
   
@@ -62,10 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PreProcessing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pengantar Data Mining" href="Materi_Pendat.html" />
+    <link rel="prev" title="Mengukur Jarak" href="Mengukur_Jarak.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,8 +130,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,18 +168,18 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Selamat Datang di Penambangan Data
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Materi_Pendat.html"><strong>Pengantar Data Mining</strong></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Tugas_1.html"><strong>Data Understanding</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mengukur_Jarak.html"><strong>Mengukur Jarak</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="PreProcessing.html"><strong>PreProcessing</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>PreProcessing</strong></a></li>
 </ul>
 
     </div>
@@ -251,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPreProcessing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/PreProcessing.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -365,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Selamat Datang di Penambangan Data</h1>
+    <h1>PreProcessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,8 +375,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profil-mahasiswa">👤 Profil Mahasiswa</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materi-pembelajaran">📚 Materi Pembelajaran</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-preprocessing">1. Pengertian PreProcessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-preprocessing-data">2. Tahapan Preprocessing Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">3. Normalisasi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">4. Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrensi">Refrensi</a></li>
 </ul>
             </nav>
         </div>
@@ -388,34 +391,207 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="selamat-datang-di-penambangan-data">
-<h1>Selamat Datang di Penambangan Data<a class="headerlink" href="#selamat-datang-di-penambangan-data" title="Permalink to this heading">#</a></h1>
-<p>Tempat di mana data diolah menjadi informasi, dan informasi menjadi keputusan.<br />
-Di sini kita belajar memahami pola, klasifikasi, <em>clustering</em>, hingga prediksi berbasis data.</p>
-<hr class="docutils" />
-<section id="profil-mahasiswa">
-<h2>👤 Profil Mahasiswa<a class="headerlink" href="#profil-mahasiswa" title="Permalink to this heading">#</a></h2>
+  <section id="preprocessing">
+<h1><strong>PreProcessing</strong><a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h1>
+<section id="pengertian-preprocessing">
+<h2>1. Pengertian PreProcessing<a class="headerlink" href="#pengertian-preprocessing" title="Permalink to this heading">#</a></h2>
+<p>Preprocessing data adalah proses awal dalam data mining atau machine learning yang bertujuan untuk menyiapkan data mentah agar dapat digunakan dalam proses analisis atau pemodelan.</p>
+<p>Data yang diperoleh dari berbagai sumber biasanya masih memiliki beberapa masalah seperti:</p>
 <ul class="simple">
-<li><p><strong>Nama</strong> : Mely Susantika Dewi</p></li>
-<li><p><strong>NIM</strong> : 240411100227</p></li>
+<li><p>Data tidak lengkap (missing value)</p></li>
+<li><p>Data tidak konsisten</p></li>
+<li><p>Data memiliki skala yang berbeda</p></li>
+<li><p>Data mengandung noise</p></li>
 </ul>
-<p>Siap menambang data dan menemukan insight berharga!</p>
+<p>Oleh karena itu diperlukan preprocessing agar data menjadi lebih bersih, konsisten, dan mudah dianalisis.</p>
 </section>
-<hr class="docutils" />
-<section id="materi-pembelajaran">
-<h2>📚 Materi Pembelajaran<a class="headerlink" href="#materi-pembelajaran" title="Permalink to this heading">#</a></h2>
-<p>Berikut materi yang akan dipelajari:</p>
-<p>Silakan pilih materi melalui menu di sebelah kiri atau lanjut ke halaman berikutnya.</p>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Materi_Pendat.html"><strong>Pengantar Data Mining</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Materi_Pendat.html#memahami-data"><strong>Memahami Data</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tugas_1.html"><strong>Data Understanding</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mengukur_Jarak.html"><strong>Mengukur Jarak</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="PreProcessing.html"><strong>PreProcessing</strong></a></li>
+<section id="tahapan-preprocessing-data">
+<h2>2. Tahapan Preprocessing Data<a class="headerlink" href="#tahapan-preprocessing-data" title="Permalink to this heading">#</a></h2>
+<p>Beberapa tahapan preprocessing yang umum dilakukan yaitu:</p>
+<ol class="arabic">
+<li><p>Data Clening</p>
+<p>Menghapus data yang tidak lengkap atau memperbaiki data yang salah.</p>
+</li>
+<li><p>Data Integration</p>
+<p>Menggabungkan data dari berbagai sumber.</p>
+</li>
+<li><p>Data Transformation</p>
+<p>Mengubah data ke bentuk yang sesuai untuk analisis.</p>
+</li>
+<li><p>Data Normalization</p>
+<p>Menyamakan skala nilai data agar tidak ada atribut yang mendominasi.</p>
+</li>
+</ol>
+</section>
+<section id="normalisasi-data">
+<h2>3. Normalisasi Data<a class="headerlink" href="#normalisasi-data" title="Permalink to this heading">#</a></h2>
+<p>Normalisasi data adalah proses mengubah nilai data ke dalam skala tertentu tanpa mengubah hubungan antar data.</p>
+<p>Tujuan normalisasi:</p>
+<ul class="simple">
+<li><p>Menyamankan skala data</p></li>
+<li><p>Menghindari dominasi nilai yang benar</p></li>
+<li><p>Mempermudah proses perhitungan algoritma seperti KNN, K-Mens, dan Machine Learning</p></li>
 </ul>
+<p>Beberapa metode normalisa yang sering digunakan adalah:</p>
+<ul class="simple">
+<li><p>Min-Max Normalization</p></li>
+<li><p>Z-Score Normalization</p></li>
+<li><p>Decimal Scalling Normalization</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>1. Min-Max Normalization</strong></p>
+<p>Min-Max Normalization mengubah nilai data ke dalam rentang 0 sampai 1.</p>
+<div class="math notranslate nohighlight">
+\[
+X' = \frac{X - X_{min}}{X_{max} - X_{min}}
+\]</div>
+<p>Keterangan</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> = nilai data asli</p></li>
+<li><p><span class="math notranslate nohighlight">\(X_{min}\)</span> = nilai minimum data</p></li>
+<li><p><span class="math notranslate nohighlight">\(X_{max}\)</span> = nilai maksimum data</p></li>
+<li><p><span class="math notranslate nohighlight">\(X'\)</span> = nilai hasil normalisasi</p></li>
+</ul>
+<p>Contoh Perhitungan</p>
+<p>Data</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>PO</p></th>
+<th class="head"><p>IPK</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2000000</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3000000</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>3000000</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2000000</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>Misalkan data IPK:</p>
+<p>2,3,4</p>
+<p>min = 2</p>
+<p>max = 4</p>
+<p>Jika ingin menormalisasi nilai 3:</p>
+<div class="math notranslate nohighlight">
+\[(3-2)/(4-2) = 1/2 = 0.5\]</div>
+<p>Hasil normalisasi:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nilai Asli</p></th>
+<th class="head"><p>Normalisasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>2. Z-Score Normalization</strong></p>
+<p>Z-Score Normalization digunakan untuk mengubah data berdasarkan rata-rata (mean) dan standar deviasi.</p>
+<div class="math notranslate nohighlight">
+\[
+Z = \frac{X - \mu}{\sigma}
+\]</div>
+<p><strong>Keterangan</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> = nilai data</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> = rata-rata data</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> = standar deviasi</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> = nilai normalisasi</p></li>
+</ul>
+<p>Contoh Perhitungan</p>
+<p>Data = 2,3,4</p>
+<p>Mean:</p>
+<div class="math notranslate nohighlight">
+\[(2+3+4)/3=3\]</div>
+<p>Standar deviasi</p>
+<div class="math notranslate nohighlight">
+\[\sigma = 0.816\]</div>
+<p>Normalisasi untuk nilai 3:</p>
+<div class="math notranslate nohighlight">
+\[(3-3)/0.816 = 0\]</div>
+<p><strong>3. Decimal Scaling Normalization</strong></p>
+<p>Metode ini menormalisasi data dengan cara membagi nilai data dengan pangkat 10.</p>
+<div class="math notranslate nohighlight">
+\[
+X' = \frac{X}{10^j}
+\]</div>
+<p><strong>Keterangan</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> = nilai data</p></li>
+<li><p><span class="math notranslate nohighlight">\(j\)</span> = jumlah digit terbesar</p></li>
+<li><p><span class="math notranslate nohighlight">\(X'\)</span> = nilai normalisasi</p></li>
+</ul>
+<p>Contoh Perhitungan</p>
+<p>Data:</p>
+<p>200000,300000,400000</p>
+<p>Nilai terbesar = 400000</p>
+<p>Jumlah digit = 6</p>
+<div class="math notranslate nohighlight">
+\[j = 6\]</div>
+<p>Normalisasi:</p>
+<p>200000 / <span class="math notranslate nohighlight">\(10^6\)</span> = 0.2</p>
+<p>300000 / <span class="math notranslate nohighlight">\(10^6\)</span> = 0.3</p>
+<p>400000 / <span class="math notranslate nohighlight">\(10^6\)</span> = 0.4</p>
+<p>Hasil:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nilai Asli</p></th>
+<th class="head"><p>Normalisasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>200000</p></td>
+<td><p>0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>300000</p></td>
+<td><p>0.3</p></td>
+</tr>
+<tr class="row-even"><td><p>400000</p></td>
+<td><p>0.4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="kesimpulan">
+<h2>4. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
+<p>Preprocessing merupakan tahap penting dalam pengolahan data sebelum dilakukan analisis. Salah satu proses penting dalam preprocessing adalah <strong>normalisasi data</strong> untuk menyamakan skala antar atribut.</p>
+<p>Terdapat beberapa metode normalisasi yang sering digunakan yaitu:</p>
+<ol class="arabic simple">
+<li><p><strong>Min-Max Normalization</strong> – mengubah data ke rentang 0–1</p></li>
+<li><p><strong>Z-Score Normalization</strong> – menggunakan mean dan standar deviasi</p></li>
+<li><p><strong>Decimal Scaling Normalization</strong> – membagi data dengan pangkat 10</p></li>
+</ol>
+<p>Dengan normalisasi, proses analisis data menjadi lebih akurat dan stabil.</p>
+</section>
+<section id="refrensi">
+<h2>Refrensi<a class="headerlink" href="#refrensi" title="Permalink to this heading">#</a></h2>
+<p>Moelab. Data Mining dan Machine Learning Materials.</p>
+<p>Diakses dari:
+<a class="reference external" href="https://moelaab.github.io">https://moelaab.github.io</a></p>
 </section>
 </section>
 
@@ -449,14 +625,14 @@ Di sini kita belajar memahami pola, klasifikasi, <em>clustering</em>, hingga pre
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="Materi_Pendat.html"
-       title="next page">
+    <a class="left-prev"
+       href="Mengukur_Jarak.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Pengantar Data Mining</strong></p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Mengukur Jarak</strong></p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -474,8 +650,11 @@ Di sini kita belajar memahami pola, klasifikasi, <em>clustering</em>, hingga pre
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profil-mahasiswa">👤 Profil Mahasiswa</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materi-pembelajaran">📚 Materi Pembelajaran</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-preprocessing">1. Pengertian PreProcessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-preprocessing-data">2. Tahapan Preprocessing Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">3. Normalisasi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">4. Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrensi">Refrensi</a></li>
 </ul>
   </nav></div>
 
