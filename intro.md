@@ -1,4 +1,4 @@
-# Selamat Datang di Penambangan Data
+# **Selamat Datang di Penambangan Data**
 
 Tempat di mana data diolah menjadi informasi, dan informasi menjadi keputusan.  
 Di sini kita belajar memahami pola, klasifikasi, *clustering*, hingga prediksi berbasis data.
