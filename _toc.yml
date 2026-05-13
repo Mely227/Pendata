@@ -12,5 +12,6 @@ chapters:
 - file: Uts.ipynb
 - file: Naive_Bayes.ipynb
 - file: GainRatio.ipynb
+- file: Random_Forest.ipynb
 
 
