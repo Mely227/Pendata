@@ -13,5 +13,7 @@ chapters:
 - file: Naive_Bayes.ipynb
 - file: GainRatio.ipynb
 - file: Random_Forest.ipynb
+- file: Regresi_Linier.ipynb
+
 
 
