@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Time_Series_Forecasting';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Prediksi Kadar NO₂ di Kabupaten Pamekasan Menggunakan KNN Regression" href="Prediksi_Kadar_NO%E2%82%82_.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -129,8 +130,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Materi_Pendat.html"><strong>Pengantar Data Mining</strong></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Tugas_1.html"><strong>Data Understanding</strong></a></li>
@@ -190,6 +189,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Regresi_Linier.html"><strong>Regresi Linier</strong></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Prediksi_Kadar_NO%E2%82%82_.html"><strong>Prediksi Kadar NO₂ di Kabupaten Pamekasan Menggunakan KNN Regression</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Time Series Forecasting</strong></a></li>
+
+
 </ul>
 
     </div>
@@ -917,24 +919,15 @@ Importance Importance      ┌───┼───┐
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">╭──────────────────────────── <span style="font-weight: bold">vic_electricity</span> ─────────────────────────────╮
-│ <span style="font-weight: bold">Description:</span>                                                             │
-│ Half-hourly electricity demand for Victoria, Australia                   │
-│                                                                          │
-│ <span style="font-weight: bold">Source:</span>                                                                  │
-│ O'Hara-Wild M, Hyndman R, Wang E, Godahewa R (2022).tsibbledata: Diverse │
-│ Datasets for 'tsibble'. https://tsibbledata.tidyverts.org/,              │
-│ https://github.com/tidyverts/tsibbledata/.                               │
-│ https://tsibbledata.tidyverts.org/reference/vic_elec.html                │
-│                                                                          │
-│ <span style="font-weight: bold">URL:</span>                                                                     │
-│ https://raw.githubusercontent.com/skforecast/skforecast-                 │
-│ datasets/main/data/vic_electricity.csv                                   │
-│                                                                          │
-│ <span style="font-weight: bold">Shape:</span> 52608 rows x 5 columns                                            │
-╰──────────────────────────────────────────────────────────────────────────╯
-</pre>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📋 Bentuk data asli: (52608, 5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vic_electricity
+---------------
+Half-hourly electricity demand for Victoria, Australia
+O&#39;Hara-Wild M, Hyndman R, Wang E, Godahewa R (2022).tsibbledata: Diverse
+Datasets for &#39;tsibble&#39;. https://tsibbledata.tidyverts.org/,
+https://github.com/tidyverts/tsibbledata/.
+https://tsibbledata.tidyverts.org/reference/vic_elec.html
+Shape of the dataset: (52608, 5)
+📋 Bentuk data asli: (52608, 5)
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1180,24 +1173,37 @@ $<span class="math notranslate nohighlight">\(\hat{y}_t = f(y_{t-1},\ y_{t-2},\ 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Membuat Forecaster</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">forecaster</span> <span class="o">=</span> <span class="n">ForecasterRecursive</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">regressor</span> <span class="o">=</span> <span class="n">LGBMRegressor</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">n_estimators</span>  <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="n">max_depth</span>     <span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">random_state</span>  <span class="o">=</span> <span class="mi">15926</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="n">verbose</span>       <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">lags</span> <span class="o">=</span> <span class="mi">24</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Forecaster berhasil dibuat!&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="nb">print</span><span class="p">()</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Forecaster berhasil dibuat!
 
-<span class="ne">TypeError</span>: ForecasterRecursive.__init__() got an unexpected keyword argument &#39;regressor&#39;
+=================== 
+ForecasterRecursive 
+=================== 
+Regressor: LGBMRegressor 
+Lags: [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24] 
+Window features: None 
+Window size: 24 
+Exogenous included: False 
+Exogenous names: None 
+Transformer for y: None 
+Transformer for exog: None 
+Weight function included: False 
+Differentiation order: None 
+Training range: None 
+Training index type: None 
+Training index frequency: None 
+Regressor parameters: 
+    {&#39;boosting_type&#39;: &#39;gbdt&#39;, &#39;class_weight&#39;: None, &#39;colsample_bytree&#39;: 1.0,
+    &#39;importance_type&#39;: &#39;split&#39;, &#39;learning_rate&#39;: 0.05, &#39;max_depth&#39;: 6,
+    &#39;min_child_samples&#39;: 20, &#39;min_child_weight&#39;: 0.001, &#39;min_split_gain&#39;: 0.0,
+    &#39;n_estimators&#39;: 500, &#39;n_jobs&#39;: None, &#39;num_leaves&#39;: 31, &#39;objective&#39;: None,
+    &#39;random_state&#39;: 15926, &#39;reg_alpha&#39;: 0.0, &#39;reg_lambda&#39;: 0.0, &#39;subsample&#39;:
+    1.0, &#39;subsample_for_bin&#39;: 200000, &#39;subsample_freq&#39;: 0, &#39;verbose&#39;: -1} 
+fit_kwargs: {} 
+Creation date: 2026-06-10 07:54:50 
+Last fit date: None 
+Skforecast version: 0.15.1 
+Python version: 3.12.1 
+Forecaster id: None 
 </pre></div>
 </div>
 </div>
@@ -1215,7 +1221,9 @@ $<span class="math notranslate nohighlight">\(\hat{y}_t = f(y_{t-1},\ y_{t-2},\ 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⏳ Melatih model... (mungkin 10-30 detik)
-✅ Model selesai dilatih!
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Model selesai dilatih!
    Jumlah lag yang digunakan : [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24]
 </pre></div>
 </div>
@@ -1243,9 +1251,7 @@ $<span class="math notranslate nohighlight">\(\hat{y}_t = f(y_{t-1},\ y_{t-2},\ 
 5 baris pertama X_train:
 </pre></div>
 </div>
-<div class="output text_html">
-  <div id="df-ece26f87-a311-46b6-9d84-e6a0aea526d1" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1434,90 +1440,7 @@ $<span class="math notranslate nohighlight">\(\hat{y}_t = f(y_{t-1},\ y_{t-2},\ 
   </tbody>
 </table>
 <p>5 rows × 24 columns</p>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ece26f87-a311-46b6-9d84-e6a0aea526d1')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-ece26f87-a311-46b6-9d84-e6a0aea526d1 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ece26f87-a311-46b6-9d84-e6a0aea526d1');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 </section>
 <section id="step-6-explainability">
@@ -1594,7 +1517,7 @@ feature  importance
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/41c95b459e02894d061cfe43675930b4839144fcd8c37ac8b748c7f7c886df8a.png" src="_images/41c95b459e02894d061cfe43675930b4839144fcd8c37ac8b748c7f7c886df8a.png" />
+<img alt="_images/ae5ea9e287e2a6cb5fa329967abe60ce8810c4817c24331a0cfb99f8e0da4e63.png" src="_images/ae5ea9e287e2a6cb5fa329967abe60ce8810c4817c24331a0cfb99f8e0da4e63.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>💡 lag_1 (30 menit lalu) = paling berpengaruh
    Makin besar lag → makin kecil pengaruhnya (wajar!)
 </pre></div>
@@ -1642,18 +1565,119 @@ feature  importance
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⏳ Menghitung permutation importance... (mungkin 1-2 menit)
-✅ Selesai! Top 10 fitur:
-feature  importance_mean  importance_std
-  lag_1     2.070370e+06     7069.697883
-  lag_2     4.478942e+04      119.610763
-  lag_3     5.271032e+03       29.245903
-  lag_4     3.885044e+03       14.739811
- lag_15     3.003825e+03       19.102525
-  lag_5     2.325420e+03       10.908134
- lag_24     2.122770e+03       26.578803
- lag_17     1.505980e+03       20.120270
- lag_13     1.232101e+03       17.790561
-  lag_7     1.098090e+03       12.475790
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Permutation Importance</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⏳ Menghitung permutation importance... (mungkin 1-2 menit)&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">estimator</span>  <span class="o">=</span> <span class="n">forecaster</span><span class="o">.</span><span class="n">regressor</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">X</span>          <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">y</span>          <span class="o">=</span> <span class="n">y_train</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">n_repeats</span>  <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>     <span class="c1"># diulangi 10 kali untuk stabilitas</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">random_state</span> <span class="o">=</span> <span class="mi">123</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">n_jobs</span>     <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>     <span class="c1"># pakai semua CPU</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">scoring</span>    <span class="o">=</span> <span class="s1">&#39;neg_mean_squared_error&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">perm_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="s1">&#39;feature&#39;</span>        <span class="p">:</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="s1">&#39;importance_mean&#39;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="s1">&#39;importance_std&#39;</span> <span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">importances_std</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;importance_mean&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Selesai! Top 10 fitur:&quot;</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/sklearn/utils/_param_validation.py:218,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">218</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="k">except</span> <span class="n">InvalidParameterError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="c1"># When the function is just a wrapper around an estimator, we allow</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="c1"># the function to delegate validation to the estimator, but we replace</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="c1"># the name of the estimator by the name of the function in the error</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="c1"># message to avoid confusion.</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="n">msg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="sa">r</span><span class="s2">&quot;parameter of \w+ must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>         <span class="sa">f</span><span class="s2">&quot;parameter of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2"> must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>         <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/sklearn/inspection/_permutation_importance.py:288,</span> in <span class="ni">permutation_importance</span><span class="nt">(estimator, X, y, scoring, n_repeats, n_jobs, random_state, sample_weight, max_samples)</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="n">scorer</span> <span class="o">=</span> <span class="n">check_scoring</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="n">baseline_score</span> <span class="o">=</span> <span class="n">_weights_scorer</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">288</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_calculate_permutation_scores</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>         <span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="n">sample_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="n">col_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">random_seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>         <span class="n">n_repeats</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>         <span class="n">scorer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="n">max_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="p">)</span>
+<span class="nn">    300     for col_idx</span> in <span class="ni">range</span><span class="nt">(X.shape[1])</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">baseline_score</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">return</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="n">name</span><span class="p">:</span> <span class="n">_create_importances_bunch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>             <span class="n">baseline_score</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">310</span>         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseline_score</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span>     <span class="p">}</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/sklearn/utils/parallel.py:91,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="n">warning_filters</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>     <span class="n">filters_func</span><span class="p">()</span> <span class="k">if</span> <span class="n">filters_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">warnings</span><span class="o">.</span><span class="n">filters</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="n">iterable_with_config_and_warning_filters</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span>     <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="n">_with_config_and_warning_filters</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">warning_filters</span><span class="p">),</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">89</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">91</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config_and_warning_filters</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/joblib/parallel.py:2072,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2066</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
+<span class="g g-Whitespace">   </span><span class="mi">2067</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
+<span class="g g-Whitespace">   </span><span class="mi">2068</span> <span class="c1"># reaches the first `yield` statement. This starts the asynchronous</span>
+<span class="g g-Whitespace">   </span><span class="mi">2069</span> <span class="c1"># dispatch of the tasks to the workers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2070</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2072</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/joblib/parallel.py:1682,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1679</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">1681</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1682</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1684</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1685</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
+<span class="g g-Whitespace">   </span><span class="mi">1686</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
+<span class="g g-Whitespace">   </span><span class="mi">1687</span>     <span class="c1"># the user if necessary.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1688</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/joblib/parallel.py:1800,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1789</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_ordered</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1790</span>     <span class="c1"># Case ordered: wait for completion (or error) of the next job</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span>     <span class="c1"># that have been dispatched and not retrieved yet. If no job</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1795</span>     <span class="c1"># control only have to be done on the amount of time the next</span>
+<span class="g g-Whitespace">   </span><span class="mi">1796</span>     <span class="c1"># dispatched job is pending.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1797</span>     <span class="k">if</span> <span class="p">(</span><span class="n">nb_jobs</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1798</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span>
+<span class="g g-Whitespace">   </span><span class="mi">1799</span>     <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1800</span>         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1801</span>         <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1803</span> <span class="k">elif</span> <span class="n">nb_jobs</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1804</span>     <span class="c1"># Case unordered: jobs are added to the list of jobs to</span>
+<span class="g g-Whitespace">   </span><span class="mi">1805</span>     <span class="c1"># retrieve `self._jobs` only once completed or in error, which</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1811</span>     <span class="c1"># timeouts before any other dispatched job has completed and</span>
+<span class="g g-Whitespace">   </span><span class="mi">1812</span>     <span class="c1"># been added to `self._jobs` to be retrieved.</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -2009,6 +2033,15 @@ feature  importance_mean  importance_std
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Prediksi_Kadar_NO%E2%82%82_.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Prediksi Kadar NO₂ di Kabupaten Pamekasan Menggunakan KNN Regression</strong></p>
+      </div>
+    </a>
 </div>
                 </footer>
               
