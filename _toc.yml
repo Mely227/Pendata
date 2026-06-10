@@ -15,6 +15,7 @@ chapters:
 - file: Random_Forest.ipynb
 - file: Regresi_Linier.ipynb
 - file: Prediksi_Kadar_NO₂_.ipynb
+- file: Time_Series_Forecasting.ipynb
 
 
 
