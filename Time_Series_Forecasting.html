@@ -190,8 +190,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="Prediksi_Kadar_NO%E2%82%82_.html"><strong>Prediksi Kadar NO₂ di Kabupaten Pamekasan Menggunakan KNN Regression</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Time Series Forecasting</strong></a></li>
-
-
 </ul>
 
     </div>
@@ -387,7 +385,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Time Series Forecasting</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksi-dari-https-skforecast-org-0-15-1-user-guides-explainability-html"><strong>Reproduksi dari</strong>: https://skforecast.org/0.15.1/user_guides/explainability.html</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prediksi-tentang-apa"><strong>1. Prediksi Tentang Apa?</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teknik-yang-digunakan">Teknik yang digunakan:</a></li>
@@ -415,13 +412,13 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-jenis-visualisasi-shap">Tiga Jenis Visualisasi SHAP</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-partial-dependence-plot-pdp">e. Partial Dependence Plot (PDP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-partial-dependence-plot-pdp">e. Partial Dependence Plot (PDP)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-keempat-teknik">📊 Perbandingan Keempat Teknik</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#temuan-utama-dari-kasus-ini">💡 Temuan Utama dari Kasus Ini</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-keempat-teknik">📊 Perbandingan Keempat Teknik</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#temuan-utama-dari-kasus-ini">💡 Temuan Utama dari Kasus Ini</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-kode-dan-eksperimen-notebook"><strong>IMPLEMENTASI KODE DAN EKSPERIMEN (NOTEBOOK)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-library">📦 Step 1 — Install Library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-import-library">📚 Step 2 — Import Library</a></li>
@@ -439,9 +436,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">💡 Kesimpulan</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -785,11 +779,8 @@ Importance Importance      ┌───┼───┐
 <div><p><strong>Kelebihan PDP:</strong> Mudah diinterpretasi — garisnya naik berarti hubungan positif, turun berarti negatif.<br />
 <strong>Kelemahan:</strong> Mengasumsikan fitur-fitur saling independen (tidak selalu benar di data nyata).</p>
 </div></blockquote>
-</section>
-</section>
-</section>
 <section id="perbandingan-keempat-teknik">
-<h1>📊 Perbandingan Keempat Teknik<a class="headerlink" href="#perbandingan-keempat-teknik" title="Permalink to this heading">#</a></h1>
+<h4>📊 Perbandingan Keempat Teknik<a class="headerlink" href="#perbandingan-keempat-teknik" title="Permalink to this heading">#</a></h4>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Teknik</p></th>
@@ -826,7 +817,7 @@ Importance Importance      ┌───┼───┐
 <strong>Lokal</strong> = berlaku untuk satu prediksi spesifik</p>
 </section>
 <section id="temuan-utama-dari-kasus-ini">
-<h1>💡 Temuan Utama dari Kasus Ini<a class="headerlink" href="#temuan-utama-dari-kasus-ini" title="Permalink to this heading">#</a></h1>
+<h4>💡 Temuan Utama dari Kasus Ini<a class="headerlink" href="#temuan-utama-dari-kasus-ini" title="Permalink to this heading">#</a></h4>
 <p>Setelah menjalankan semua analisis, ditemukan:</p>
 <ol class="arabic simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">lag_1</span></code> paling berpengaruh</strong> — konsumsi 30 menit lalu adalah prediktor terkuat untuk saat ini</p></li>
@@ -835,6 +826,9 @@ Importance Importance      ┌───┼───┐
 <li><p><strong>Hubungan monoton positif</strong> — semakin tinggi nilai lag → semakin tinggi prediksi (terlihat di PDP)</p></li>
 <li><p><strong>Model LightGBM bisa dijelaskan</strong> — bukan sekadar “kotak hitam”</p></li>
 </ol>
+</section>
+</section>
+</section>
 <section id="implementasi-kode-dan-eksperimen-notebook">
 <h2><strong>IMPLEMENTASI KODE DAN EKSPERIMEN (NOTEBOOK)</strong><a class="headerlink" href="#implementasi-kode-dan-eksperimen-notebook" title="Permalink to this heading">#</a></h2>
 <section id="step-1-install-library">
@@ -1199,7 +1193,7 @@ Regressor parameters:
     &#39;random_state&#39;: 15926, &#39;reg_alpha&#39;: 0.0, &#39;reg_lambda&#39;: 0.0, &#39;subsample&#39;:
     1.0, &#39;subsample_for_bin&#39;: 200000, &#39;subsample_freq&#39;: 0, &#39;verbose&#39;: -1} 
 fit_kwargs: {} 
-Creation date: 2026-06-10 07:54:50 
+Creation date: 2026-06-10 07:59:15 
 Last fit date: None 
 Skforecast version: 0.15.1 
 Python version: 3.12.1 
@@ -1999,6 +1993,7 @@ feature  importance
 <li><p>Model <strong>tidak sekadar blackbox</strong> — bisa dijelaskan dengan baik</p></li>
 <li><p>SHAP adalah teknik paling informatif: bisa lihat pengaruh per prediksi</p></li>
 </ul>
+<hr class="docutils" />
 <p><em>Reproduksi dari <a class="reference external" href="https://skforecast.org/0.15.1/user_guides/explainability.html">skforecast.org/0.15.1/user_guides/explainability</a></em></p>
 </section>
 </section>
@@ -2058,7 +2053,6 @@ feature  importance
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Time Series Forecasting</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksi-dari-https-skforecast-org-0-15-1-user-guides-explainability-html"><strong>Reproduksi dari</strong>: https://skforecast.org/0.15.1/user_guides/explainability.html</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prediksi-tentang-apa"><strong>1. Prediksi Tentang Apa?</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teknik-yang-digunakan">Teknik yang digunakan:</a></li>
@@ -2086,13 +2080,13 @@ feature  importance
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-jenis-visualisasi-shap">Tiga Jenis Visualisasi SHAP</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-partial-dependence-plot-pdp">e. Partial Dependence Plot (PDP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-partial-dependence-plot-pdp">e. Partial Dependence Plot (PDP)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-keempat-teknik">📊 Perbandingan Keempat Teknik</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#temuan-utama-dari-kasus-ini">💡 Temuan Utama dari Kasus Ini</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-keempat-teknik">📊 Perbandingan Keempat Teknik</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#temuan-utama-dari-kasus-ini">💡 Temuan Utama dari Kasus Ini</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-kode-dan-eksperimen-notebook"><strong>IMPLEMENTASI KODE DAN EKSPERIMEN (NOTEBOOK)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-library">📦 Step 1 — Install Library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-import-library">📚 Step 2 — Import Library</a></li>
@@ -2110,9 +2104,6 @@ feature  importance
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">💡 Kesimpulan</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
